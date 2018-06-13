@@ -8,59 +8,36 @@ import {persons} from "./persons";
 })
 export class AhmedComponent implements OnInit {
 
+  person = ["ahmed", "mohamed", "ali"];
 
-  name: string = "ahmed";
-  age: number = 22;
+  job = ["java", "c++ ", "pthon"];
+
+  image: string = "./../../assets/200.png";
+
+  flag: boolean = false;
 
 
-  employee: persons;
-  employees: persons[];
-  arra: any;
+  myclassCss: boolean = true;
+
+
+  myclassesCss = {};
+
 
   constructor() {
-    this.employee = {
-      name: "ahmed",
-      address:
-        "alex"
-      , age:
-        55
+    this.generateClasses();
+  }
+
+  ngOnInit(): void {
+  }
+
+  generateClasses() {
+
+    this.myclassesCss = {
+      myclass: true,
+      myclass1: false
+
+
     }
-    ;
-    this.employees = [{
-      name: "ahmed",
-      address:
-        "alex"
-      , age:
-        55
-
-
-    },
-      {
-        name: "ali",
-        address:
-          "cairo"
-        , age:
-        200
-
-
-      }
-
-
-    ]
-
-    this.name = "eslam ";
-    this.arra = [1, 2, 3]
-  }
-
-  ngOnInit() {
-
-    this.age = 40;
-    this.changeaddressEmployee();
-  }
-
-  changeaddressEmployee() {
-
-    this.employee.address = "cairo";
 
   }
 

@@ -1,15 +1,43 @@
-<p>
-  ahmed works!
-  <br>
-  {{name}}
-  <br>
-  {{age}}
-  <br>
-  Employee : {{employee.name}} ,{{employee.address}},{{employee.age}}
-  <br>
-  {{arra}}
-  <br>
+<!--Name is : {{flag ? else name:'mohamed'}}-->
 
-  {{employees}}
 
-</p>
+<div><img src="{{image}}"></div>
+
+<div><img [src]="image"></div>
+<div><img bind-src="image"></div>
+
+
+<div [ngSwitch]="flag">
+
+
+  <p *ngSwitchCase="true">
+    ahmed true
+  </p>
+  <p *ngSwitchCase="false">
+    ahmed false
+  </p>
+
+  <p *ngSwitchDefault="">
+    nothing </p>
+
+
+</div>
+
+
+<ul>
+  <li [ngClass]="myclassesCss" *ngFor="let per of person">{{per}}</li>
+
+
+</ul>
+
+<ul>
+  <li *ngFor="let jo of job; let i =index">{{i}} - {{jo}}</li>
+
+</ul>
+
+
+
+
+
+
+
