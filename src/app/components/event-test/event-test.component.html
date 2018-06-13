@@ -1,3 +1,20 @@
 <p>
   event-test works!
 </p>
+
+
+
+<button type="button"  (click)="button1Click($event , 'ahmed mohamed')" 
+class="btn btn-large btn-block btn-primary">Click</button>
+<button type="button"  (mousedown)="button1Click($event , 'mouse Down')"
+ class="btn btn-large btn-block btn-primary">Mouse Down </button>
+ <button type="button"  (mouseup)="button1Click($event , 'mouse Up')"
+ class="btn btn-large btn-block btn-primary">Mouse Up </button>
+ <button type="button"  (mouseover)="button1Click($event , 'mouse Over')"
+ class="btn btn-large btn-block btn-primary">Mouse Over </button>
+ <p type="button"  (drag)="button1Click($event , 'Drag')"
+ class="btn btn-large btn-block btn-primary">Drag </p>
+ <button type="button"  (dblclick)="button1Click($event , 'Double Click')"
+ class="btn btn-large btn-block btn-primary">Double Click </button>
+ <p type="button"  (dragover)="button1Click($event , 'Drag Over')"
+ class="btn btn-large btn-block btn-primary">Drag Over </p>

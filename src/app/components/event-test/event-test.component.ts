@@ -9,6 +9,15 @@ export class EventTestComponent implements OnInit {
 
   constructor() { }
 
+
+button1Click(e , args){
+
+console.log(e.type  );
+console.log(args  );
+
+}
+
+
   ngOnInit() {
   }
 
