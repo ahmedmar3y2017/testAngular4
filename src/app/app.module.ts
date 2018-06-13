@@ -6,6 +6,9 @@ import { AhmedComponent } from './components/ahmed/ahmed.component';
 import { PipeTestComponent } from './components/pipe-test/pipe-test.component';
 import { EventTestComponent } from './components/event-test/event-test.component';
 import { Event1TestComponent } from './components/event1-test/event1-test.component';
+import { FormsComponent } from './components/forms/forms.component';
+import { FormsModule } from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -13,10 +16,11 @@ import { Event1TestComponent } from './components/event1-test/event1-test.compon
     AhmedComponent,
     PipeTestComponent,
     EventTestComponent,
-    Event1TestComponent
+    Event1TestComponent,
+    FormsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule , FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

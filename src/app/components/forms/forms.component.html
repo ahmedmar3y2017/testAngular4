@@ -1,0 +1,79 @@
+<div class="container">
+
+  <form novalidate #fo (ngSubmit)="onSubmitEvent(fo)">
+    <div class="form-group">
+      <label for="fName">First name : </label>
+      <input type="text" class="form-control" id="fName" [(ngModel)]="per.fName" name="fName" #fName="ngModel" required minlength="4">
+    </div>
+    <div class="form-group">
+      <label for="lName">Last name : </label>
+      <input type="text" class="form-control" id="lName" [(ngModel)]="per.lName" name="lName" #lName="ngModel" required minlength="4">
+    </div>
+    <div class="form-group">
+      <label for="age">Age : </label>
+      <input type="number" class="form-control" id="age" [(ngModel)]="per.age" name="age" #age="ngModel" required minlength="2">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <!-- first Name Validation  -->
+
+    <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
+
+      <div *ngIf="fName.errors.required">
+        First Name is required.
+      </div>
+      <div *ngIf="fName.errors.minlength">
+        First Name must be at least 4 characters long.
+      </div>
+      <div *ngIf="fName.errors.forbiddenName">
+        First Name cannot be Bob.
+      </div>
+    </div>
+
+    <!-- lastName Validaion  -->
+
+    <div *ngIf="lName.invalid && (lName.dirty || lName.touched)" class="alert alert-danger">
+
+      <div *ngIf="lName.errors.required">
+        lastName is required.
+      </div>
+      <div *ngIf="lName.errors.minlength">
+        lastName must be at least 4 characters long.
+      </div>
+      <div *ngIf="lName.errors.forbiddenName">
+        lastName cannot be Bob.
+      </div>
+    </div>
+
+    <!-- Age Validation  -->
+    <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+
+        <div *ngIf="age.errors.required">
+            age is required.
+        </div>
+        <div *ngIf="age.errors.minlength">
+            age must be at least 4 characters long.
+        </div>
+        <div *ngIf="age.errors.forbiddenName">
+            age cannot be Bob.
+        </div>
+      </div>
+
+
+  </form>
+
+
+</div>
+
+
+
+
+<div class="container">
+
+<h3>{{verifyForm.fName}}</h3>
+<h3>{{verifyForm.lName}}</h3>
+<h3>{{verifyForm.age}}</h3>
+
+
+</div>

@@ -7,6 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Event1TestComponent implements OnInit {
 
+name:string="true";
+
+
+check:boolean=true;
+
+
+clickButton(){
+  this.check=!this.check;
+
+
+if(this.check == true){
+  this.name="true";
+
+
+}else 
+{
+  this.name="false";
+
+}
+
+}
+
+
   constructor() { }
 
   ngOnInit() {
