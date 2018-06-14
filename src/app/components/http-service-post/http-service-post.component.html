@@ -1,0 +1,45 @@
+<div class="container">
+
+    <style>
+        .container {
+          padding: 40px;
+      
+        }
+      </style>
+      
+      <div class="container">
+      
+        <ul class="list-group">
+          <li *ngFor="let item of persons; let i= index; " class="list-group-item">
+      
+            {{item.id}} --> {{item.name}} --> {{item.username}} --> {{item.email}}
+      
+      
+          </li>
+      
+        </ul>
+      
+      </div>
+
+  <form novalidate #fo (ngSubmit)="onSubmitEvent()">
+    <div class="form-group">
+      <label for="name">Name : </label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="person.name" name="name" #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="username">user Name : </label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="person.username" name="username" #username="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="email">Email : </label>
+      <input type="text" class="form-control" id="email" [(ngModel)]="person.email" name="email" #email="ngModel">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+  </form>
+
+
+</div>
