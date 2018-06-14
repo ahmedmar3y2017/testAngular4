@@ -1,25 +1,39 @@
 <div class="container">
 
-    <style>
-        .container {
-          padding: 40px;
-      
-        }
-      </style>
-      
-      <div class="container">
-      
-        <ul class="list-group">
-          <li *ngFor="let item of persons; let i= index; " class="list-group-item">
-      
-            {{item.id}} --> {{item.name}} --> {{item.username}} --> {{item.email}}
-      
-      
-          </li>
-      
-        </ul>
-      
-      </div>
+  <style>
+    .container {
+      padding: 40px;
+
+    }
+
+    .deleteButton {
+
+      margin-left: 300px;
+
+    }
+  </style>
+
+  <div class="container">
+
+    <ul class="list-group">
+      <li *ngFor="let item of persons; let i= index; " class="list-group-item">
+
+        {{item.id}} --> {{item.name}} --> {{item.username}} --> {{item.email}}
+
+
+        <button type="button" class="btn btn-large  btn-danger deleteButton" (click)="deleteItem(item.id)">Delete Item</button>
+
+        <button type="button" class="btn btn-large  btn-success" (click)="editItem(item)">Edit Item</button>
+
+
+
+
+
+      </li>
+
+    </ul>
+
+  </div>
 
   <form novalidate #fo (ngSubmit)="onSubmitEvent()">
     <div class="form-group">

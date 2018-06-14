@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import {Headers, Http, RequestOptions, Response, URLSearchParams} from '@angular/http';
+import { Headers, Http, RequestOptions, Response, URLSearchParams } from '@angular/http';
 import "rxjs/add/operator/map";
 
 
@@ -15,19 +15,32 @@ export class HttpServiceService {
 
 
   }
+  editperson(person) {
+    console.log("Person is : "+person.id )
+    return this._http.put(this._taskurl + "/" + person.id , person)
+      .map(res => res.json());
+
+  }
+  deleteperson(id) {
+
+    return this._http.delete(this._taskurl + "/" + id)
+      .map(res => res.json());
+
+  }
   getperson() {
     return this._http.get(this._taskurl)
       .map(res => res.json());
 
 
   }
-saveperson(person){
+  saveperson(person) {
 
-  return this._http.post(this._taskurl ,person)
+    return this._http.post(this._taskurl, person)
       .map(res => res.json());
 
 
-}
+  }
+
 
 
 }
