@@ -20,12 +20,14 @@ import { ProfilesComponent } from './components/profiles/profiles.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { Router, RouterModule, Route, Routes } from "@angular/router";
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "profiles", component: ProfilesComponent },
+  { path: "profile/:id", component: UserprofileComponent },
   { path: "navbar", component: NavbarComponent }
 
 ];
@@ -44,18 +46,13 @@ const appRoutes: Routes = [
     HttpServicePostComponent,
     HomeComponent,
     ProfilesComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserprofileComponent
   ],
   // for modules 
   imports: [
     BrowserModule, FormsModule, HttpModule,
-    RouterModule.forRoot([
-
-      { path: "", component: HomeComponent },
-      { path: "profiles", component: ProfilesComponent },
-      { path: "navbar", component: NavbarComponent }
-
-    ])
+    RouterModule.forRoot(appRoutes)
   ],
   // provided service 
   providers: [MyNewServiceService, HttpServiceService],
