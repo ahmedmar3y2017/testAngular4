@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { MyNewServiceService } from "./services/my-new-service.service";
 import { HttpModule } from "@angular/http";
@@ -15,7 +15,20 @@ import { FormsModule } from "@angular/forms";
 import { CompServiceComponent } from './components/comp-service/comp-service.component';
 import { HttpServiceComponentComponent } from './components/http-service-component/http-service-component.component';
 import { HttpServicePostComponent } from './components/http-service-post/http-service-post.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfilesComponent } from './components/profiles/profiles.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
+import { Router, RouterModule, Route, Routes } from "@angular/router";
+
+
+
+const appRoutes: Routes = [
+  { path: "", component: HomeComponent },
+  { path: "profiles", component: ProfilesComponent },
+  { path: "navbar", component: NavbarComponent }
+
+];
 
 @NgModule({
   // for component 
@@ -28,11 +41,21 @@ import { HttpServicePostComponent } from './components/http-service-post/http-se
     FormsComponent,
     CompServiceComponent,
     HttpServiceComponentComponent,
-    HttpServicePostComponent
+    HttpServicePostComponent,
+    HomeComponent,
+    ProfilesComponent,
+    NavbarComponent
   ],
   // for modules 
   imports: [
-    BrowserModule, FormsModule, HttpModule
+    BrowserModule, FormsModule, HttpModule,
+    RouterModule.forRoot([
+
+      { path: "", component: HomeComponent },
+      { path: "profiles", component: ProfilesComponent },
+      { path: "navbar", component: NavbarComponent }
+
+    ])
   ],
   // provided service 
   providers: [MyNewServiceService, HttpServiceService],
